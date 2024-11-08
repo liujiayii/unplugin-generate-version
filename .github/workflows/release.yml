@@ -19,7 +19,7 @@ jobs:
         # 使用actions/checkout插件
         uses: actions/checkout@v4
       # 发布NPM包
-       - name: Install Pnpm
+      - name: Install Pnpm
         uses: pnpm/action-setup@v4
       # 安装node
       - name: 设置Node.js
@@ -29,7 +29,6 @@ jobs:
           # node版本
           node-version: 20
           cache: pnpm
-
       - name: Run npm scripts
         run: |
           node -v
