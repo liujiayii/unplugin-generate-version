@@ -5,7 +5,7 @@ export default <Options>{
     'src/*.ts',
   ],
   clean: true,
-  format: ['cjs','esm'],
+  format: ['cjs', 'esm'],
   dts: true,
   cjsInterop: true,
   splitting: true,
