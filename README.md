@@ -1,28 +1,14 @@
-# unplugin-starter
+# unplugin-generate-version
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-starter?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-starter)
+[![NPM version](https://img.shields.io/npm/v/unplugin-generate-version?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-generate-version)
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+### 使用说明
+在打包时向public目录生成一个包含当前时间戳的文件,在浏览器端通过fetch轮询获取版本号,与旧的版本号进行比较,来判断是否系统进行了更新, 避免浏览器端缓存造成用户体验问题。代码 examples/openUpdateVersionNotify.tsx 可参考。
 
-## Template Usage
-
-To use this template, clone it down using:
-
-```bash
-npx degit unplugin/unplugin-starter my-unplugin
-```
-
-And do a global replacement of `unplugin-starter` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
-
-## Install
+## Use
 
 ```bash
-npm i unplugin-starter
+npm i unplugin-generate-version
 ```
 
 <details>
@@ -30,93 +16,15 @@ npm i unplugin-starter
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-starter/vite'
+import GenerateVersion from 'unplugin-generate-version/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
+    GenerateVersion({ /* options */ }),
   ],
 })
 ```
 
-Example: [`playground/`](./playground/)
+``` tsx
 
-<br></details>
-
-<details>
-<summary>Rollup</summary><br>
-
-```ts
-// rollup.config.js
-import Starter from 'unplugin-starter/rollup'
-
-export default {
-  plugins: [
-    Starter({ /* options */ }),
-  ],
-}
 ```
-
-<br></details>
-
-<details>
-<summary>Webpack</summary><br>
-
-```ts
-// webpack.config.js
-module.exports = {
-  /* ... */
-  plugins: [
-    require('unplugin-starter/webpack')({ /* options */ })
-  ]
-}
-```
-
-<br></details>
-
-<details>
-<summary>Nuxt</summary><br>
-
-```ts
-// nuxt.config.js
-export default defineNuxtConfig({
-  modules: [
-    ['unplugin-starter/nuxt', { /* options */ }],
-  ],
-})
-```
-
-> This module works for both Nuxt 2 and [Nuxt Vite](https://github.com/nuxt/vite)
-
-<br></details>
-
-<details>
-<summary>Vue CLI</summary><br>
-
-```ts
-// vue.config.js
-module.exports = {
-  configureWebpack: {
-    plugins: [
-      require('unplugin-starter/webpack')({ /* options */ }),
-    ],
-  },
-}
-```
-
-<br></details>
-
-<details>
-<summary>esbuild</summary><br>
-
-```ts
-// esbuild.config.js
-import { build } from 'esbuild'
-import Starter from 'unplugin-starter/esbuild'
-
-build({
-  plugins: [Starter()],
-})
-```
-
-<br></details>
